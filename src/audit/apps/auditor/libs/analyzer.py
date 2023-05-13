@@ -1,6 +1,7 @@
 from seoanalyzer import analyze
 
 
-def run():
-    output = analyze('https://www.sethserver.com/tests/utf8.html')
-    print(output)
+def run(site: str):
+    output = analyze(site, analyze_headings=True, analyze_extra_tags=True)
+
+    return output
