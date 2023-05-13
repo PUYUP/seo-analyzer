@@ -1,8 +1,7 @@
-from django.shortcuts import render
 from django.views import View
 from django.http.response import JsonResponse
 
-from apps.auditor.libs import analyzer
+from apps.auditor.libs import analyzer, scraper
 
 
 class AnalyzingAjaxView(View):
@@ -14,7 +13,6 @@ class AnalyzingAjaxView(View):
         'title': None,
         'description': None,
         'warnings': [],
-
     }
 
     def post(self, request, *agrs, **kwargs):
@@ -40,4 +38,15 @@ class AnalyzingAjaxView(View):
                 'warnings': warnings,
             })
 
+        return JsonResponse(self.context)
+
+
+class GetLatestNews(View):
+    context = {}
+
+    def get(self, request, *agrs, **kwargs):
+        source = request.GET.get('source')
+        if source == 'cnn':
+            results = scraper.get_latest_cnn_news()
+            self.context.update({'results': results})
         return JsonResponse(self.context)

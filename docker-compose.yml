@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  backend:
+    build: ./src/audit
+    command: python manage.py runserver 0.0.0.0:9000
+    volumes:
+      - ./src/audit/:/usr/src/audit/
+    ports:
+      - 9000:9000
+    env_file:
+      - ./src/audit/.env.dev
+    depends_on:
+      - database
+  database:
+    image: postgres:15.2
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=seoaudit
+      - POSTGRES_PASSWORD=V9rj0kmE#e0R
+      - POSTGRES_DB=seoaudit_dev
+  
+volumes:
+  postgres_data:

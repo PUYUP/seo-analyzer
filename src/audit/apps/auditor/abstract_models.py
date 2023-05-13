@@ -34,3 +34,20 @@ class AbstractAnalyzerLog(models.Model):
     class Meta:
         abstract = True
         app_label = 'auditor'
+
+
+@with_timestamp_and_uuid
+class AbstractNews(models.Model):
+    title = models.CharField(max_length=255, db_index=True)
+    content = models.TextField()
+    author_name = models.CharField(max_length=255,
+                                   null=True,
+                                   blank=True)
+    published_at = models.CharField(max_length=255)
+
+    class Meta:
+        abstract = True
+        app_label = 'auditor'
+
+    def __str__(self) -> str:
+        return self.title
