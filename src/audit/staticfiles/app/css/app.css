@@ -1,0 +1,11 @@
+body, 
+html { 
+	min-height: 100%;
+	height: 100%;
+	background-color: #eee;
+}
+
+main {
+	min-height: 100%;
+	height: 100%;
+}

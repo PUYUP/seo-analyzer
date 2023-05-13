@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="Muhammad Rahman">
+		<meta name="generator" content="SEO Audit Tools">
+		<title>SEO Audit Tools</title>
+
+		<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+		<link href="{% static 'vendors/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'vendors/bootstrap/css/bootstrap-utilities.min.css' %}" rel="stylesheet">
+		<link href="{% static 'vendors/bootstrap/css/bootstrap-grid.min.css' %}" rel="stylesheet">
+
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+		<link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
+		<link rel="mask-icon" href="{% static 'favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Custom styles for this template -->
+		<link href="{% static 'app/css/app.css' %}" rel="stylesheet">
+	</head>
+  	<body>
+		<main>
+			{% include 'shared/navbar.html' %}
+			{% block content %}{% endblock %}
+			{% include 'shared/footer.html' %}
+		</main>
+	</body>
+</html>

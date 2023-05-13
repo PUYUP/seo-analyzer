@@ -1,0 +1,2 @@
+django==4.2.1
+pyseoanalyzer==4.0.7
