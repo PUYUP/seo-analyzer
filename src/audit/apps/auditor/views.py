@@ -9,10 +9,12 @@ class AnalyzingAjaxView(View):
     context = {
         'output': None,
         'word_count': 0,
+        'internal_link_count': 0,
         'keywords': [],
         'title': None,
         'description': None,
         'warnings': [],
+
     }
 
     def post(self, request, *agrs, **kwargs):
@@ -31,6 +33,7 @@ class AnalyzingAjaxView(View):
 
             self.context.update({
                 'word_count': word_count,
+                'internal_link_count': len(output['pages']),
                 'keywords': keywords,
                 'title': title,
                 'description': description,

@@ -62,6 +62,11 @@
 							</tr>
 
 							<tr>
+								<td>Number of Internal Links</td>
+								<td>${response.internal_link_count}</td>
+							</tr>
+
+							<tr>
 								<td>Warnings</td>
 								<td>
 									<ol>
