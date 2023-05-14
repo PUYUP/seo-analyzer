@@ -36,7 +36,7 @@ Django provided default dashboard
 
 To get latest news from CNN run this
 
-- Open `http://localhost:9000/auditor/getnews/`
+- Open `http://localhost:9000/auditor/getnews/?source=cnn`
 - Wait until return results with contains links successed scraped
 - Back to `http://localhost:9000/admin` navigate to menu `News` to see scraper results
 
